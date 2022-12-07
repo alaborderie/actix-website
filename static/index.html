@@ -1,8 +1,115 @@
-<!DOCTYPE html>
-<html>
-  <head>
-  </head>
-  <body>
-    Hello World!
-  </body>
+<!doctype html>
+<html class="no-js" lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Antoine Laborderie - Web Developer</title>
+  <meta name="description" content="Vous cherchez un développeur web freelance expérimenté pour mener à bien votre projet ? Je suis là pour vous aider à atteindre vos objectifs et à créer une expérience en ligne exceptionnelle pour votre entreprise.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Antoine Laborderie - Web Developer">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.antoinelaborderie.com">
+  <meta property="og:image" content="https://www.antoinelaborderie.com/static/antoine.png">
+
+  <link rel="manifest" href="static/site.webmanifest">
+  <link rel="apple-touch-icon" href="static/icon.png">
+
+  <link rel="stylesheet" href="static/css/normalize.css">
+  <link rel="stylesheet" href="static/css/main.css?id={{uuid}}">
+
+  <meta name="theme-color" content="#434242">
+</head>
+
+<body>
+  <section class="hero-section">
+    <div class="background-image"></div>
+    <h1>Antoine Laborderie - Freelance Web Developer</h1>
+    <h2>Un développeur expérimenté pour vos projets web</h2>
+    <div class="frameworks">
+      <p>Rust - Node - React - Django - Elixir</p>
+    </div>
+  </section>
+  <section class="skills-and-pricing-section">
+    <div class="skills">
+      <div>
+        <div>
+          <img src="/static/img/rust-logo.svg" height="90px" width="90px" alt="Rust logo" />
+        </div>
+      </div>
+      <div>
+        <div>
+          <img src="/static/img/node-logo.svg" height="90px" width="90px" alt="Node logo"/>
+        </div>
+      </div>
+      <div>
+        <div>
+          <img src="/static/img/react-logo.svg" height="90px" width="90px" alt="React logo"/>
+        </div>
+      </div>
+      <div>
+        <div>
+          <img src="/static/img/django-logo.svg" height="90px" width="90px" alt="Django logo"/>
+        </div>
+      </div>
+      <div>
+        <div>
+          <img src="/static/img/elixir-logo.png" width="90px" alt="Elixir logo"/>
+        </div>
+      </div>
+      <div>
+          <div>
+        <img src="/static/img/linux-logo.png" width="90px" alt="GNU/Linux logo"/>
+        </div>
+      </div>
+    </div>
+    <div class="pricing">
+      <div class="regie">
+        <h2>En régie - Mon TJM</h2>
+        <p>550€</p>
+        <p>C'est mon Tarif Journalier Moyen, qui peut fluctuer selon les projets / techno / durée des missions...</p>
+      </div>
+      <div class="forfait">
+        <h2>Au forfait</h2>
+        <p>Mes prestations peuvent se réaliser au forfait sans problème.<br/>Bien entouré, je saurai faire intervenir des personnes compétentes pour réaliser vos projets clé en main de A à Z.</p>
+        <p>Étant développeur full stack, je peux me charger du développement de vos projets web qu'ils soient côté client ou serveur.<br/>Utilisateur de GNU/Linux depuis plus de 10 ans, et intéressé par l'infrastructure Cloud en général, je peux m'occuper du déploiement de vos applications, que ce soit sur serveur dédié ou dans le cloud.</p>
+      </div>
+    </div>
+  </section>
+  <section class="contact-section">
+    <div class="form">
+      <h2>Besoin d'aide pour un projet web ? Un devis pour une appli ? Ou tout simplement une question sur mon travail ?</h2>
+      <h3>Contactez-moi grâce au formulaire ci-dessous, ou sur les réseaux</h3>
+      <div class="social-networks">
+        <a>Twitter</a>
+        <a>LinkedIn</a>
+        <a>Github</a>
+      </div>
+      <div class="contact-form">
+        <label for="name">Nom</label>
+        <input id="name" />
+        <label for="email">Email</label>
+        <input id="email" type="email" />
+        <label for="message">Votre message</label>
+        <textarea id="message" rows="6"></textarea>
+        <button type="button" onclick="contactMe()">Contactez-moi !</button>
+        <p id="apiResponseField"></p>
+      </div>
+    </div>
+  </section>
+  <script src="static/js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="static/js/plugins.js"></script>
+  <script src="static/js/main.js?id={{uuid}}"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SLDGTPC5C7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-SLDGTPC5C7');
+  </script>
+</body>
+
 </html>
