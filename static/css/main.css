@@ -12,10 +12,10 @@
    ========================================================================== */
 
 html {
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Fira Code';
   color: #F3EFE0;
-  background-color: #434242;
-  font-size: 1em;
+  background-color: #212121;
+  font-size: 16px;
   line-height: 1.4;
 }
 
@@ -263,169 +263,53 @@ textarea {
   }
 }
 
-.hero-section {
-  min-height: 60vh;
+@import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
+
+code { font-family: 'Fira Code', monospace; }
+
+@supports (font-variation-settings: normal) {
+  code { font-family: 'Fira Code VF', monospace; }
+}
+
+.terminal-section {
+  height: 100vh;
   width: 100vw;
+  border: 2px solid #4AF626;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 3em 1em;
-  position: relative;
   box-sizing: border-box;
-  text-align: center;
-}
-.hero-section .background-image {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/static/img/hero-background.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: blur(5px);
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
+  font-family: 'Fira Code';
 }
 
-.hero-section > h1 {
-  z-index: 2;
+.terminal-history {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-height: calc(100vh - 30px);
+  padding: 12px 8px 8px 8px;
 }
 
-.hero-section > h2 {
-  z-index: 2;
+.terminal-history h1, .terminal-history h2, .terminal-history h3 {
+  font-size: 16px;
+  font-weight: normal;
 }
 
-.hero-section .frameworks {
-  z-index: 2;
+.prompt {
   display: flex;
-  color: #FFDCA9;
-  justify-content: center;
   align-items: center;
+  padding: 12px 8px 8px 8px;
+  height: 30px;
+  font-size: 16px;
 }
 
-.skills-and-pricing-section {
-  display: flex;
-  justify-content: space-evenly;
-}
-.skills-and-pricing-section .skills {
-  flex: 0.3;
-  padding: 16px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-gap: 12px;
+.prompt > input {
+  background: transparent;
+  margin-left: 4px;
+  border: none;
+  height: 16px;
+  color: #F3EFE0;
 }
 
-.skills-and-pricing-section .skills > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.skills-and-pricing-section .skills > div > div {
-  width: 125px;
-  height: 125px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 4px;
-  border-radius: 50%;
-  background-color: #FFDCA9;
-}
-
-.skills-and-pricing-section .pricing {
-  flex: 0.7;
-  padding: 16px;
-}
-
-.skills-and-pricing-section .pricing .regie {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 5em;
-}
-
-.skills-and-pricing-section .pricing .forfait {
-  text-align: center;
-}
-
-.contact-section {
-  display: flex;
-  width: 100vw;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  color: black;
-}
-
-.contact-section .form {
-  background-color: #FFDCA9;
-  width: 800px;
-  border-radius: 8px;
-  padding: 16px;
-  box-sizing: border-box;
-  margin: 5em 0;
-}
-
-.contact-section h2 {
-  font-size: 1.2em;
-  text-align: center;
-}
-
-.contact-section h3 {
-  font-size: 1em;
-  margin-bottom: 0;
-  text-align: center;
-}
-
-.contact-section .social-networks {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.contact-section .social-networks a {
-  margin: 12px 8px;
-}
-
-.contact-section .contact-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-section .contact-form input, .contact-section .contact-form textarea {
-  margin-bottom: 1em;
-}
-
-.contact-section .contact-form button {
-  padding: 12px;
-  background-color: transparent;
-  border: 1px solid black;
-  cursor: pointer;
-}
-
-.contact-section .contact-form button:hover {
-  background-color: #777777;
-  transition: background 0.4s;
-}
-
-@media screen and (max-width: 1024px) {
-  .skills-and-pricing-section {
-    flex-direction: column;
-  }
-  .skills-and-pricing-section .pricing .regie {
-    margin-bottom: 2em;
-  }
-
-  .contact-section .form {
-    width: 100%;
-    border-radius: 0;
-    margin-bottom: 0;
-  }
+.prompt > input:focus {
+  outline: none;
 }
