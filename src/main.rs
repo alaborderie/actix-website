@@ -1,7 +1,6 @@
 use actix_files::Files;
 use actix_web::HttpRequest;
-use actix_web::{get, post, web, App, HttpResponse, HttpServer, middleware::Logger};
-use env_logger;
+use actix_web::{get, middleware::Logger, post, web, App, HttpResponse, HttpServer};
 use handlebars::Handlebars;
 
 use controllers::contact_controller;
@@ -37,7 +36,9 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(move || {
         App::new()
             .app_data(handlebars_ref.clone())
-            .wrap(Logger::new("%a \"%r\" %s %b \"%{Referer}i\" \"%{User-Agent}i\" %T"))
+            .wrap(Logger::new(
+                "%a \"%r\" %s %b \"%{Referer}i\" \"%{User-Agent}i\" %T",
+            ))
             .service(Files::new("/static", "static").show_files_listing())
             .service(home)
             .service(contact)
