@@ -137,13 +137,13 @@ function getUrl(website) {
   return urls[website];
 }
 
-function contactMe(name, email, message) {
+function contactMe(formValue) {
   fetch("/contact", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ name, email, message }),
+    body: JSON.stringify(formValue),
   })
     .then((res) => {
       console.log(res);
