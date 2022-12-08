@@ -2,6 +2,7 @@ use actix_files::Files;
 use actix_web::HttpRequest;
 use actix_web::{get, middleware::Logger, post, web, App, HttpResponse, HttpServer};
 use handlebars::Handlebars;
+use std::env;
 
 use controllers::contact_controller;
 use controllers::home_controller;
@@ -33,6 +34,7 @@ async fn main() -> std::io::Result<()> {
     let handlebars_ref = web::Data::new(handlebars);
 
     // Server config
+    let port = env::var("PORT").unwrap_or("8080".into());
     HttpServer::new(move || {
         App::new()
             .app_data(handlebars_ref.clone())
@@ -43,7 +45,7 @@ async fn main() -> std::io::Result<()> {
             .service(home)
             .service(contact)
     })
-    .bind(("0.0.0.0", 8080))?
+    .bind(("0.0.0.0", port.parse::<u16>().unwrap()))?
     .run()
     .await
 }
