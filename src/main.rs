@@ -41,7 +41,7 @@ async fn main() -> std::io::Result<()> {
             .wrap(Logger::new(
                 "%a \"%r\" %s %b \"%{Referer}i\" \"%{User-Agent}i\" %T",
             ))
-            .service(Files::new("/static", "static").show_files_listing())
+            .service(Files::new("/static", "./static/"))
             .service(home)
             .service(contact)
     })
