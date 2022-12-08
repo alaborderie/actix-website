@@ -17,84 +17,26 @@
   
   <link rel="stylesheet" href="static/css/normalize.css">
   <link rel="stylesheet" href="static/css/main.css?id={{uuid}}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
 
   <meta name="theme-color" content="#434242">
 </head>
 
 <body>
-  <section class="hero-section">
-    <div class="background-image"></div>
-    <h1>Antoine Laborderie - Freelance Web Developer</h1>
-    <h2>Un développeur expérimenté pour vos projets web</h2>
-    <div class="frameworks">
-      <p>Rust - Node - React - Django - Elixir</p>
+  <section class="terminal-section">
+    <div class="terminal-history" id="terminal-history">
+      <p>$ whoami</p>
+      <h1>Antoine Laborderie - Freelance Web Developer</h1>
+      <p>$ skills --list</p>
+      <h2>fullstack-development<br/>rust<br/>nodejs</br/>react<br/>elixir<br/>python<br/>GNU/Linux</h2>
+      <p>$ tjm</p>
+      <p>550€</p>
+      <p>$ missions --forfait --lang=fr</p>
+      <h2>Disposant de partenaires freelance designer, dev front-end, mobile ou back-end, nous pouvant réaliser vos projets web de A à Z.<br/>Un projet ? Une mission ? Contactez-moi avec la commande `contact` dans le terminal ci-dessous 👇</h2>
     </div>
-  </section>
-  <section class="skills-and-pricing-section">
-    <div class="skills">
-      <div>
-        <div>
-          <img src="/static/img/rust-logo.svg" height="90px" width="90px" alt="Rust logo" />
-        </div>
-      </div>
-      <div>
-        <div>
-          <img src="/static/img/node-logo.svg" height="90px" width="90px" alt="Node logo"/>
-        </div>
-      </div>
-      <div>
-        <div>
-          <img src="/static/img/react-logo.svg" height="90px" width="90px" alt="React logo"/>
-        </div>
-      </div>
-      <div>
-        <div>
-          <img src="/static/img/django-logo.svg" height="90px" width="90px" alt="Django logo"/>
-        </div>
-      </div>
-      <div>
-        <div>
-          <img src="/static/img/elixir-logo.png" width="90px" alt="Elixir logo"/>
-        </div>
-      </div>
-      <div>
-          <div>
-        <img src="/static/img/linux-logo.png" width="90px" alt="GNU/Linux logo"/>
-        </div>
-      </div>
-    </div>
-    <div class="pricing">
-      <div class="regie">
-        <h2>En régie - Mon TJM</h2>
-        <p>550€</p>
-        <p>C'est mon Tarif Journalier Moyen, qui peut fluctuer selon les projets / techno / durée des missions...</p>
-      </div>
-      <div class="forfait">
-        <h2>Au forfait</h2>
-        <p>Mes prestations peuvent se réaliser au forfait sans problème.<br/>Bien entouré, je saurai faire intervenir des personnes compétentes pour réaliser vos projets clé en main de A à Z.</p>
-        <p>Étant développeur full stack, je peux me charger du développement de vos projets web qu'ils soient côté client ou serveur.<br/>Utilisateur de GNU/Linux depuis plus de 10 ans, et intéressé par l'infrastructure Cloud en général, je peux m'occuper du déploiement de vos applications, que ce soit sur serveur dédié ou dans le cloud.</p>
-      </div>
-    </div>
-  </section>
-  <section class="contact-section">
-    <div class="form">
-      <h2>Besoin d'aide pour un projet web ? Un devis pour une appli ? Ou tout simplement une question sur mon travail ?</h2>
-      <h3>Contactez-moi grâce au formulaire ci-dessous, ou sur les réseaux</h3>
-      <div class="social-networks">
-        <a>Twitter</a>
-        <a>LinkedIn</a>
-        <a>Github</a>
-      </div>
-      <div class="contact-form">
-        <label for="name">Nom</label>
-        <input id="name" />
-        <label for="email">Email</label>
-        <input id="email" type="email" />
-        <label for="message">Votre message</label>
-        <textarea id="message" rows="6"></textarea>
-        <button type="button" onclick="contactMe()">Contactez-moi !</button>
-        <p id="apiResponseField"></p>
-      </div>
+    <div class="prompt">
+      <label for="prompt-input">$</label>
+      <input type="text" id="prompt-input" autofocus />
     </div>
   </section>
   <script src="static/js/vendor/modernizr-3.11.2.min.js"></script>
