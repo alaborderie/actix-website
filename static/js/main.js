@@ -18,7 +18,8 @@ document.addEventListener(
 );
 
 function enterPressed() {
-  let cmd = document.getElementById("prompt-input").value.toLowerCase().trim();
+  let value = document.getElementById("prompt-input").value;
+  let cmd = window.isContactFormOpen ? value : value.toLowerCase().trim();
   if (cmd && cmd.length > 0) {
     document.getElementById("prompt-input").value = "";
     if (!window.isContactFormOpen) {
