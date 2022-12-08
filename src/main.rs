@@ -34,7 +34,7 @@ async fn main() -> std::io::Result<()> {
     let handlebars_ref = web::Data::new(handlebars);
 
     // Server config
-    let port = env::var("PORT").unwrap_or("8080".into());
+    let port = env::var("PORT").unwrap_or_else(|_| "8080".into());
     HttpServer::new(move || {
         App::new()
             .app_data(handlebars_ref.clone())
