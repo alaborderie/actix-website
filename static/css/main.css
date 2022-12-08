@@ -303,8 +303,9 @@ code { font-family: 'Fira Code', monospace; }
 }
 
 .prompt > input {
+  flex: 1;
   background: transparent;
-  margin-left: 4px;
+  margin-left: 9px;
   border: none;
   height: 16px;
   color: #F3EFE0;

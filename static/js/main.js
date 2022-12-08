@@ -18,7 +18,7 @@ document.addEventListener(
 );
 
 function enterPressed() {
-  let cmd = document.getElementById("prompt-input").value;
+  let cmd = document.getElementById("prompt-input").value.toLowerCase().trim();
   if (cmd && cmd.length > 0) {
     document.getElementById("prompt-input").value = "";
     if (!window.isContactFormOpen) {
@@ -151,6 +151,8 @@ function contactMe(formValue) {
         let success = document.createElement("p");
         success.innerHTML = "Thanks for reaching out!";
         document.getElementById("terminal-history").appendChild(success);
+        document.getElementById("terminal-history").scrollTop =
+          document.getElementById("terminal-history").scrollHeight;
       } else {
         showError();
       }
@@ -164,4 +166,6 @@ function showError() {
   let error = document.createElement("p");
   error.innerHTML = "Oops! Looks like the form wasn't valid, please try again!";
   document.getElementById("terminal-history").appendChild(error);
+  document.getElementById("terminal-history").scrollTop =
+    document.getElementById("terminal-history").scrollHeight;
 }
