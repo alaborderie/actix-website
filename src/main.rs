@@ -1,11 +1,11 @@
-use actix_files::Files;
+use actix_files::{Files, NamedFile};
 use actix_web::{
     body::BoxBody,
     dev::ServiceResponse,
     get,
     http::{header::ContentType, StatusCode},
     middleware::{ErrorHandlerResponse, ErrorHandlers, Logger},
-    post, web, App, HttpRequest, HttpResponse, HttpServer, Result,
+    post, web, App, HttpRequest, HttpResponse, HttpServer, Responder, Result,
 };
 use handlebars::Handlebars;
 use serde_json::json;
@@ -26,6 +26,11 @@ async fn home(_req: HttpRequest, hb: web::Data<Handlebars<'_>>) -> HttpResponse 
 #[post("/contact")]
 async fn contact(_req: HttpRequest, contact_form: web::Json<ContactForm>) -> HttpResponse {
     contact_controller(contact_form.into_inner()).await
+}
+
+#[get("/robots.txt")]
+async fn robots_txt() -> impl Responder {
+    NamedFile::open_async("./static/robots.txt").await
 }
 
 // Custom error handlers, to return HTML responses when an error occurs.
@@ -97,6 +102,7 @@ async fn main() -> std::io::Result<()> {
             .service(Files::new("/static", "./static/"))
             .service(home)
             .service(contact)
+            .service(robots_txt)
     })
     .bind(("0.0.0.0", port.parse::<u16>().unwrap()))?
     .run()
